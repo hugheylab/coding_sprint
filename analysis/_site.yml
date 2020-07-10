@@ -1,7 +1,7 @@
-name: "coding_sprint"
+name: "Coding Sprint"
 output_dir: ../docs
 navbar:
-  title: "coding_sprint"
+  title: "Coding Sprint"
   left:
   - text: Home
     href: index.html
