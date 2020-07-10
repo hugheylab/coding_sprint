@@ -1,4 +1,4 @@
-# coding_sprint
+# Coding Sprint
 
 A [workflowr][] project.
 
