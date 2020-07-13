@@ -1,0 +1,60 @@
+---
+title: "Sample Analysis for SBA Dataset"
+author: "doraaobodo"
+date: "2020-07-13"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
+## Introduction
+
+ALL data files are located within the `data` folder. This sample page shows an example of how to access and process PPP data from the state of Kentucky. We will then make a summary plot to look at the the amount small businesses received by gender. 
+
+## Load data
+
+The first thing to do is to load data from the Kentucky. Single state folders contain a .csv for small businesses who recieved loans up to 150k. Data for **ALL** states >150k should be downloaded from [here](https://www.dropbox.com/s/e7hfn71g0hnuelk/foia_150k_plus.csv?dl=0).
+
+```{r load libraries}
+library(data.table)
+library(ggplot2)
+```
+
+
+```{r laod all data}
+dataDir = 'data'
+stateDir = 'Kentucky'
+
+all_states_plus = fread(file.path(dataDir, 'foia_150k_plus.csv'))
+ky_1 = fread(file.path(dataDir, stateDir, 'foia_up_to_150k_KY.csv'))
+```
+
+```{r head all_states_plus}
+head(all_states_plus, 3)
+```
+
+```{r head kentucky only}
+head(ky_1, 3)
+```
+
+There's a more information provided for busines that recieved more loans
+
+## A Little Processing
+```{r process_data}
+all_states_plus[, BusinessName := NULL]
+all_states_plus[, Address := NULL]
+setnames(all_states_plus, 'LoanRange', 'LoanAmount')
+
+ky_2 = all_states_plus[State == 'KY']
+ky_dat = rbind(ky_1, ky_2)
+```
+
+## Make plot
+
+```{r plot trend}
+ggplot(ky_1, aes(x = Gender, y = LoanAmount, fill = Gender)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by Gender for Loans <150k')
+```
+

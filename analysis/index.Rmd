@@ -8,4 +8,32 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Website to showcase our fun SBA Coding Sprint for Lab Meeting on 07.13.2020
+
+Check out the sample analysis if you are new to markdown.
+
+* [Sample Analysis](sample_analysis.html)
+
+
+# Individual Pages: 
+
+### Steps:
+
+1. Please add your analyses to your corresponding `.Rmd` file in the analysis folder.
+
+ 
+### Once complete please 
+
+1. Build your page with `wflow_build()`
+2. Deploy your page with `wflow_publish()`
+
+
+# Check out these pages!
+
+ * [Darwin](darwin_file.html)
+ * [Dora](dora_file.html)
+ * [Elliot](elliot_file.html)
+ * [Jake](jake_file.html)
+ * [Josh](josh_file.html)
+ * [Layla](layla_file.html)
+ * [Michael](michael_file.html)
