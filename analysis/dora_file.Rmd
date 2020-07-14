@@ -37,6 +37,6 @@ fl_1[, PerPersonPerMedian := (PerPerson-57241)]
 ```
 
 ```{r make_plot}
-ggplot(fl_1, aes(x = Gender, y = PerPersonPerMedian, fill = Gender)) + geom_boxplot(alpha = 0.1)
+ggplot(fl_1, aes(PerPersonPerMedian)) + geom_histogram()
 ```
 
