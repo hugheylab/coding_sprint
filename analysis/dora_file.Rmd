@@ -9,7 +9,34 @@ editor_options:
 
 ## Introduction
 
-```{r}
+My question of interest is for small businesses how long does the amount of money given last?
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
+```{r load libraries}
+library(data.table)
+library(ggplot2)
+```
+
+
+```{r laod all data}
+dataDir = 'data'
+stateDir = 'Florida'
+all_states_plus = fread(file.path(dataDir, 'foia_150k_plus.csv'))
+fl_1 = fread(file.path(dataDir, stateDir, 'foia_up_to_150k_FL.csv'))
+
+```
+
+
+```{r }
+fl_1[, MonhtlyAmount := LoanAmount/12]
+fl_1[, PerPerson := LoanAmount/JobsRetained]
+fl_1[, PerPersonPerMedian := (PerPerson-57241)]
+```
+
+```{r make_plot}
+ggplot(fl_1, aes(x = Gender, y = PerPersonPerMedian, fill = Gender)) + geom_boxplot(alpha = 0.1)
 ```
 
