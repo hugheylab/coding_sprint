@@ -1,15 +1,63 @@
 ---
 title: "darwin_file"
-author: "doraaobodo"
+author: "Darwin"
 date: "2020-07-13"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
 ## Introduction
 
-```{r}
+This is Darwin's analysis
+
+## Load data
+
+```{r load libraries}
+library(data.table)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+```
+
+```{r load and prep data}
+smallTN = fread(file.path('data', 'Tennessee', 'foia_up_to_150k_TN.csv'))
+largeUS = fread(file.path('data', 'foia_150k_plus.csv'))
+
+bizCodes = fread(file.path('data', 'NACISCodes.csv'))
+setkey(bizCodes, Code)
+
+smallData = smallTN[City == 'NASHVILLE' & NonProfit == 'Y']
+largeData = largeUS[City == 'NASHVILLE' & State == 'TN' & NonProfit == 'Y']
+
+smallData$NAICS_Business_Type = bizCodes[.(smallData$NAICSCode)]$Title
+largeData$NAICS_Business_Type = bizCodes[.(largeData$NAICSCode)]$Title
+```
+
+```{r merge to form plot data}
+smallData$LoanRange = '< 150K'
+
+plotData = rbind(largeData[, .(LoanRange, Lender, DateApproved)], smallData[, .(LoanRange, Lender, DateApproved)])
+setorder(plotData, DateApproved)
+
+plotData = plotData[, .(LOANS = .N), by = .(DateApproved, LoanRange)]
+
+
+
+```
+
+```{r head plotData}
+head(plotData, 10)
+```
+
+
+## Make plot
+
+```{r plot trend}
 
 ```
 
