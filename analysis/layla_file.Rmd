@@ -10,6 +10,36 @@ editor_options:
 ## Introduction
 
 ```{r}
+library(data.table)
+library(ggplot2)
+dataDir = 'data'
+stateDir = 'Kentucky'
 
+all_states_plus = fread(file.path(dataDir, 'foia_150k_plus.csv'))
+code_map = fread('data/NACISCodes.csv')
+```
+
+```{r}
+ky = fread(file.path(dataDir, stateDir, 'foia_up_to_150k_KY.csv'))
+```
+
+
+```{r}
+ggplot(ky, aes(x=LoanAmount, y=JobsRetained)) + geom_point()
+```
+
+```{r}
+# top 10 businesses 
+top_biz = names(sort(table(ky$NAICSCode),decreasing=TRUE)[1:10])
+ky_f1 = ky[NAICSCode %in% top_biz]
+ky_f1 = merge(ky_f1, code_map, by.x='NAICSCode', by.y='Code', all.x = T)
+ky_f1 = ky_f1[, NAICSCode := as.character(NAICSCode)]
+
+ggplot(ky_f1, aes(x = NAICSCode, y = LoanAmount, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by Gender for Loans <150k')
+
+```
+
+```{r}
+ggplot(ky_f1, aes(x = NAICSCode, y = JobsRetained, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by Gender for Loans <150k')
 ```
 
