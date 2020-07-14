@@ -42,11 +42,15 @@ largeData$NAICS_Business_Type = bizCodes[.(largeData$NAICSCode)]$Title
 smallData$LoanRange = '< 150K'
 
 plotData = rbind(largeData[, .(LoanRange, Lender, DateApproved)], smallData[, .(LoanRange, Lender, DateApproved)])
+plotData[, DateApproved := as.Date(plotData$DateApproved, '%m/%d/%Y')]
+
 setorder(plotData, DateApproved)
 
 plotData = plotData[, .(LOANS = .N), by = .(DateApproved, LoanRange)]
 
+plotDataSplit = split(plotData, plotData$LoanRange)
 
+plotData = rbindlist(lapply(plotDataSplit, function(x) {return(x[, TOTAL_LOANS := cumsum(LOANS)])}))
 
 ```
 
@@ -58,6 +62,6 @@ head(plotData, 10)
 ## Make plot
 
 ```{r plot trend}
-
+ggplot(plotData) + geom_line(aes(x = DateApproved, y = TOTAL_LOANS, group = LoanRange, color = LoanRange))
 ```
 
