@@ -504,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree3f72bf6ce2a0150f29be0b434350445418727337targetblank3f72bf6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/3f72bf6ce2a0150f29be0b434350445418727337" target="_blank">3f72bf6</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree540af30b24086eecd124cf8cd510a4341df3c849targetblank540af30a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/540af30b24086eecd124cf8cd510a4341df3c849" target="_blank">540af30</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree3f72bf6ce2a0150f29be0b434350445418727337targetblank3f72bf6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree540af30b24086eecd124cf8cd510a4341df3c849targetblank540af30a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/3f72bf6ce2a0150f29be0b434350445418727337" target="_blank">3f72bf6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/540af30b24086eecd124cf8cd510a4341df3c849" target="_blank">540af30</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -559,8 +559,45 @@ fl_1 = fread(file.path(dataDir, stateDir, &#39;foia_up_to_150k_FL.csv&#39;))</co
 <pre class="r"><code>fl_1[, MonhtlyAmount := LoanAmount/12]
 fl_1[, PerPerson := LoanAmount/JobsRetained]
 fl_1[, PerPersonPerMedian := (PerPerson-57241)]</code></pre>
-<pre class="r"><code>ggplot(fl_1, aes(x = Gender, y = PerPersonPerMedian, fill = Gender)) + geom_boxplot(alpha = 0.1)</code></pre>
+<pre class="r"><code>ggplot(fl_1, aes(PerPersonPerMedian)) + geom_histogram()</code></pre>
 <p><img src="figure/dora_file.Rmd/make_plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-make_plot-1">
+Past versions of make_plot-1.png
+</button>
+</p>
+<div id="fig-make_plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint/blob/4603035dfda2d7a32d890dd1afd1a95fc7b8dc11/docs/figure/dora_file.Rmd/make_plot-1.png" target="_blank">4603035</a>
+</td>
+<td>
+doraaobodo
+</td>
+<td>
+2020-07-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -593,11 +630,11 @@ loaded via a namespace (and not attached):
 [13] rlang_0.4.6      yaml_2.2.1       xfun_0.15        withr_2.2.0     
 [17] stringr_1.4.0    dplyr_0.8.5      knitr_1.29       fs_1.4.1        
 [21] vctrs_0.3.0      rprojroot_1.3-2  grid_3.6.3       tidyselect_1.1.0
-[25] glue_1.4.1       R6_2.4.1         rmarkdown_2.3    farver_2.0.3    
-[29] purrr_0.3.4      magrittr_1.5     backports_1.1.7  scales_1.1.1    
-[33] promises_1.1.1   htmltools_0.5.0  ellipsis_0.3.1   assertthat_0.2.1
-[37] colorspace_1.4-1 httpuv_1.5.4     labeling_0.3     stringi_1.4.6   
-[41] munsell_0.5.0    crayon_1.3.4    </code></pre>
+[25] glue_1.4.1       R6_2.4.1         rmarkdown_2.3    whisker_0.4     
+[29] farver_2.0.3     purrr_0.3.4      magrittr_1.5     backports_1.1.7 
+[33] scales_1.1.1     promises_1.1.1   htmltools_0.5.0  ellipsis_0.3.1  
+[37] assertthat_0.2.1 colorspace_1.4-1 httpuv_1.5.4     labeling_0.3    
+[41] stringi_1.4.6    munsell_0.5.0    crayon_1.3.4    </code></pre>
 </div>
 </div>
 
