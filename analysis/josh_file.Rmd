@@ -63,9 +63,5 @@ tn_dat = rbind(tn_1, tn_2)
 top20 = head(tn_dat,20)
 ```
 
-# Make plot
 
-```{r plot trend}
-ggplot(top20, aes(x = "2017 NAICS US Title", y = LoanAmount, fill = NAICSCode)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by NAICS Code for all Loans')
-```
 
