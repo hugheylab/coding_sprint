@@ -504,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree699ba37975cd8484e362311cc35a53cae39338f2targetblank699ba37a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/699ba37975cd8484e362311cc35a53cae39338f2" target="_blank">699ba37</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree540af30b24086eecd124cf8cd510a4341df3c849targetblank540af30a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/540af30b24086eecd124cf8cd510a4341df3c849" target="_blank">540af30</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree699ba37975cd8484e362311cc35a53cae39338f2targetblank699ba37a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree540af30b24086eecd124cf8cd510a4341df3c849targetblank540af30a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/699ba37975cd8484e362311cc35a53cae39338f2" target="_blank">699ba37</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/540af30b24086eecd124cf8cd510a4341df3c849" target="_blank">540af30</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -522,7 +522,6 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rproj.user/
-    Ignored:    analysis/figure/
     Ignored:    data/.DS_Store
     Ignored:    data/foia_150k_plus.csv
 
@@ -566,6 +565,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint/blob/11d8b29f0024afea3c0e71990fbeb1ab36570e1b/analysis/josh_file.Rmd" target="_blank">11d8b29</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-07-14
+</td>
+<td>
+Fix Issues On My RMD File
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint/11d8b29f0024afea3c0e71990fbeb1ab36570e1b/docs/josh_file.html" target="_blank">11d8b29</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-07-14
+</td>
+<td>
+Fix Issues On My RMD File
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -688,7 +721,91 @@ tn_dat = rbind(tn_1, tn_2)
 </div>
 <div id="see-head" class="section level2">
 <h2>See Head</h2>
-<pre class="r"><code>top20 = head(tn_dat,20)</code></pre>
+<pre class="r"><code>head(tn_dat,20)</code></pre>
+<pre><code>    LoanAmount         City State   Zip NAICSCode
+ 1:   149987.5    NASHVILLE    TN 37204    722320
+ 2:     149985    NASHVILLE    TN 37203    722511
+ 3:     149940   COOKEVILLE    TN 38506    541219
+ 4:     149924 JOHNSON CITY    TN 37601    541512
+ 5:     149900       HIXSON    TN 37343    722511
+ 6:     149884    KNOXVILLE    TN 37923    446110
+ 7:   149877.5    KNOXVILLE    TN 37917    541110
+ 8:     149865    KNOXVILLE    TN 37934    812112
+ 9:     149830   SOMERVILLE    TN 38068    621210
+10:     149800    NASHVILLE    TN 37204    812199
+11:     149800    CLEVELAND    TN 37311    447110
+12:     149800      MEMPHIS    TN 38128    621210
+13:  149776.02    KNOXVILLE    TN 37921    624110
+14:     149776  GREENEVILLE    TN 37745    621210
+15:     149772   FRIENDSHIP    TN 38034    336390
+16:     149765    KNOXVILLE    TN 37923    713940
+17:  149764.52    NASHVILLE    TN 37203    624190
+18:     149740      CORDOVA    TN 38018    722511
+19:     149700  CHATTANOOGA    TN 37406    561730
+20:     149700  CHATTANOOGA    TN 37421    813110
+                       BusinessType RaceEthnicity     Gender     Veteran
+ 1: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+ 2:                     Corporation    Unanswered Unanswered  Unanswered
+ 3: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+ 4: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+ 5: Limited  Liability Company(LLC)         White Male Owned Non-Veteran
+ 6: Limited  Liability Company(LLC)    Unanswered Male Owned  Unanswered
+ 7: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+ 8: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+ 9:                     Partnership    Unanswered Unanswered  Unanswered
+10:         Non-Profit Organization    Unanswered Unanswered  Unanswered
+11: Limited  Liability Company(LLC)         White Male Owned Non-Veteran
+12:                     Corporation    Unanswered Unanswered  Unanswered
+13:         Non-Profit Organization    Unanswered Unanswered  Unanswered
+14: Limited  Liability Company(LLC)    Unanswered Unanswered  Unanswered
+15:                     Corporation    Unanswered Unanswered  Unanswered
+16:        Subchapter S Corporation    Unanswered Unanswered  Unanswered
+17:         Non-Profit Organization    Unanswered Unanswered  Unanswered
+18:                     Corporation    Unanswered Unanswered  Unanswered
+19:                     Corporation    Unanswered Unanswered  Unanswered
+20:                     Corporation    Unanswered Unanswered  Unanswered
+    NonProfit JobsRetained DateApproved
+ 1:                     20   04/11/2020
+ 2:                     19   04/27/2020
+ 3:                     14   04/11/2020
+ 4:                     12   04/14/2020
+ 5:                     35   04/10/2020
+ 6:                     12   04/14/2020
+ 7:                     18   04/13/2020
+ 8:                     24   04/14/2020
+ 9:                     18   04/15/2020
+10:         Y            0   04/29/2020
+11:                     16   04/06/2020
+12:                      8   04/07/2020
+13:         Y           68   04/09/2020
+14:                     16   04/27/2020
+15:                     NA   04/15/2020
+16:                     24   04/06/2020
+17:         Y            9   04/08/2020
+18:                     43   04/29/2020
+19:                     20   04/16/2020
+20:                     29   04/16/2020
+                                         Lender      CD
+ 1:                               Pinnacle Bank TN - 05
+ 2:                               Pinnacle Bank TN - 05
+ 3:                  Putnam 1st Mercantile Bank TN - 06
+ 4:                           Bank of Tennessee TN - 01
+ 5: Truist Bank d/b/a Branch Banking &amp; Trust Co TN - 03
+ 6:                      Mountain Commerce Bank TN - 02
+ 7:                               Pinnacle Bank TN - 02
+ 8:                               Pinnacle Bank TN - 02
+ 9:                     Trustmark National Bank TN - 07
+10:                                Regions Bank TN - 05
+11:                           Bank of Cleveland TN - 03
+12:               City National Bank of Florida TN - 08
+13:              Home Federal Bank of Tennessee TN - 02
+14:               Greeneville Federal Bank, FSB TN - 01
+15:                                       Bank3 TN - 08
+16:                                       UBank TN - 02
+17:                       Truxton Trust Company TN - 05
+18:                                  IBERIABANK TN - 07
+19:                                   FirstBank TN - 03
+20:                                   FirstBank TN - 03</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
