@@ -35,11 +35,11 @@ ky_f1 = ky[NAICSCode %in% top_biz]
 ky_f1 = merge(ky_f1, code_map, by.x='NAICSCode', by.y='Code', all.x = T)
 ky_f1 = ky_f1[, NAICSCode := as.character(NAICSCode)]
 
-ggplot(ky_f1, aes(x = NAICSCode, y = LoanAmount, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by Gender for Loans <150k')
+ggplot(ky_f1, aes(x = NAICSCode, y = LoanAmount, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) 
 
 ```
 
 ```{r}
-ggplot(ky_f1, aes(x = NAICSCode, y = JobsRetained, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) + labs(title = 'Small Business Loan Amount by Gender for Loans <150k')
+ggplot(ky_f1, aes(x = NAICSCode, y = JobsRetained, fill = Title)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = 'black')) 
 ```
 
