@@ -36,5 +36,6 @@ foiDT = data.frame(
 p = plot_usmap(data = foiDT, values = 'X') +
   scale_fill_continuous()
 
+p
 ```
 
