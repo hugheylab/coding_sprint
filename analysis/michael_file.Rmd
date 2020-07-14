@@ -34,7 +34,8 @@ foiDT = data.frame(
 ```{r plotting, echo=TRUE}
 
 p = plot_usmap(data = foiDT, values = 'X') +
-  scale_fill_continuous()
+  scale_fill_continuous(low = 'white', high = 'blue', name = 'Jobs Retained',
+                        labels = scales::comma)
 
 p
 ```
