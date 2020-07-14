@@ -9,7 +9,32 @@ editor_options:
 
 ## Introduction
 
-```{r}
+```{r Load Libraries}
+library(data.table)
+library(usmap)
+library(ggplot2)
+library(workflowr)
+```
+
+```{r processing}
+foi150 = fread(file.path('data', 'foia_150k_plus.csv'))
+foi150[, fips := usmap::fips(state = State)]
+
+foiSummary = foi150[, lapply(.SD, sum, na.rm = TRUE), by = State, .SDcols = c('JobsRetained')]
+foiSummary[, fips := usmap::fips(state = State)]
+foiSummary = foiSummary[!is.na(fips), ]
+
+foiDT = data.frame(
+  fips = as.numeric(foiSummary$fips),
+  X = as.numeric(foiSummary$JobsRetained)
+)
+
+```
+
+```{r plotting}
+
+p = plot_usmap(data = foiDT, values = 'X') +
+  scale_fill_continuous()
 
 ```
 
