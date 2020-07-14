@@ -60,7 +60,7 @@ tn_dat = rbind(tn_1, tn_2)
 ## See Head
 
 ```{r plot trend}
-top20 = head(tn_dat,20)
+head(tn_dat,20)
 ```
 
 
