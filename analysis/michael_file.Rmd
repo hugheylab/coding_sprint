@@ -24,11 +24,21 @@ foiSummary = foi150[, lapply(.SD, sum, na.rm = TRUE), by = State, .SDcols = c('J
 foiSummary[, fips := usmap::fips(state = State)]
 foiSummary = foiSummary[!is.na(fips), ]
 
-foiDT = data.frame(
+foiDT = data.table(
   fips = as.numeric(foiSummary$fips),
   X = as.numeric(foiSummary$JobsRetained)
 )
+statepop$fips = as.numeric(statepop$fips)
 
+popFoiDT = foiDT
+popFoiDT = merge(foiDT, statepop, by = 'fips')
+popFoiDT[, jobsPerPerson := X / pop_2015]
+
+
+popDT = data.table(
+  fips = popFoiDT$fips,
+  X = popFoiDT$jobsPerPerson
+)
 ```
 
 ```{r plotting, echo=TRUE}
@@ -40,3 +50,10 @@ p = plot_usmap(data = foiDT, values = 'X') +
 p
 ```
 
+```{r plotting pop adjusted, echo = TRUE}
+popAdjPlot = plot_usmap(data = popDT, values = 'X' ) +
+    scale_fill_continuous(low = 'white', high = 'blue', name = 'Jobs Retained/Person',
+                        labels = scales::comma)
+
+popAdjPlot
+```
