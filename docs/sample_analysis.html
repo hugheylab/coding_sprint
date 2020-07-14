@@ -395,7 +395,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -404,7 +404,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -413,10 +413,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-13
+<strong>Last updated:</strong> 2020-07-14
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>coding_sprint/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -432,12 +432,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -461,7 +461,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongSeedstrongcodesetseed20200710code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
@@ -504,40 +504,24 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree7ac781517a8a3a526e34c5b5897f83217e4d63a6targetblank7ac7815a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/7ac781517a8a3a526e34c5b5897f83217e4d63a6" target="_blank">7ac7815</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree3f72bf6ce2a0150f29be0b434350445418727337targetblank3f72bf6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint/tree/3f72bf6ce2a0150f29be0b434350445418727337" target="_blank">3f72bf6</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree7ac781517a8a3a526e34c5b5897f83217e4d63a6targetblank7ac7815a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprinttree3f72bf6ce2a0150f29be0b434350445418727337targetblank3f72bf6a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/7ac781517a8a3a526e34c5b5897f83217e4d63a6" target="_blank">7ac7815</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint/tree/3f72bf6ce2a0150f29be0b434350445418727337" target="_blank">3f72bf6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    .DS_Store
-    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-    Ignored:    data/.DS_Store
     Ignored:    data/foia_150k_plus.csv
-
-Untracked files:
-    Untracked:  analysis/darwin_file.Rmd
-    Untracked:  analysis/dora_file.Rmd
-    Untracked:  analysis/elliot_file.Rmd
-    Untracked:  analysis/jake_file.Rmd
-    Untracked:  analysis/josh_file.Rmd
-    Untracked:  analysis/layla_file.Rmd
-    Untracked:  analysis/michael_file.Rmd
-    Untracked:  analysis/sample_analysis.Rmd
-
-Unstaged changes:
-    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -620,6 +604,43 @@ ky_dat = rbind(ky_1, ky_2)</code></pre>
 <h2>Make plot</h2>
 <pre class="r"><code>ggplot(ky_1, aes(x = Gender, y = LoanAmount, fill = Gender)) + geom_boxplot(alpha = 0.1) + theme(axis.text = element_text(color = &#39;black&#39;)) + labs(title = &#39;Small Business Loan Amount by Gender for Loans &lt;150k&#39;)</code></pre>
 <p><img src="figure/sample_analysis.Rmd/plot%20trend-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-plot-trend-1">
+Past versions of “plot trend-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-plot-trend-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint/blob/759339531a06e64bc69b2cb318726f7ca0785a6d/docs/figure/sample_analysis.Rmd/plot trend-1.png" target="_blank">7593395</a>
+</td>
+<td>
+doraaobodo
+</td>
+<td>
+2020-07-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -630,7 +651,7 @@ ky_dat = rbind(ky_1, ky_2)</code></pre>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>R version 3.6.3 (2020-02-29)
 Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS Catalina 10.15.4
+Running under: macOS Catalina 10.15.5
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
@@ -643,20 +664,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_3.3.0     data.table_1.12.8 workflowr_1.6.2  
+[1] ggplot2_3.3.2     data.table_1.12.8
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.4.6     compiler_3.6.3   pillar_1.4.4     later_1.1.0.1   
- [5] git2r_0.27.1     tools_3.6.3      digest_0.6.25    evaluate_0.14   
- [9] lifecycle_0.2.0  tibble_3.0.1     gtable_0.3.0     pkgconfig_2.0.3 
-[13] rlang_0.4.6      yaml_2.2.1       xfun_0.15        withr_2.2.0     
-[17] stringr_1.4.0    dplyr_0.8.5      knitr_1.29       fs_1.4.1        
-[21] vctrs_0.3.0      rprojroot_1.3-2  grid_3.6.3       tidyselect_1.1.0
-[25] glue_1.4.1       R6_2.4.1         rmarkdown_2.3    farver_2.0.3    
-[29] purrr_0.3.4      magrittr_1.5     backports_1.1.7  scales_1.1.1    
-[33] promises_1.1.1   htmltools_0.5.0  ellipsis_0.3.1   assertthat_0.2.1
-[37] colorspace_1.4-1 httpuv_1.5.4     labeling_0.3     stringi_1.4.6   
-[41] munsell_0.5.0    crayon_1.3.4    </code></pre>
+ [1] Rcpp_1.0.5       pillar_1.4.6     compiler_3.6.3   later_1.1.0.1   
+ [5] git2r_0.27.1     workflowr_1.6.2  tools_3.6.3      digest_0.6.25   
+ [9] evaluate_0.14    lifecycle_0.2.0  tibble_3.0.3     gtable_0.3.0    
+[13] pkgconfig_2.0.3  rlang_0.4.7      rstudioapi_0.11  yaml_2.2.1      
+[17] xfun_0.15        withr_2.2.0      stringr_1.4.0    dplyr_1.0.0     
+[21] knitr_1.29       generics_0.0.2   fs_1.4.2         vctrs_0.3.1     
+[25] rprojroot_1.3-2  grid_3.6.3       tidyselect_1.1.0 glue_1.4.1      
+[29] R6_2.4.1         rmarkdown_2.3    whisker_0.4      farver_2.0.3    
+[33] purrr_0.3.4      magrittr_1.5     backports_1.1.8  scales_1.1.1    
+[37] promises_1.1.1   ellipsis_0.3.1   htmltools_0.5.0  colorspace_1.4-1
+[41] httpuv_1.5.4     labeling_0.3     stringi_1.4.6    munsell_0.5.0   
+[45] crayon_1.3.4    </code></pre>
 </div>
 </div>
 

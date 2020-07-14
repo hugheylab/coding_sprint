@@ -10,6 +10,46 @@ editor_options:
 ## Introduction
 
 ```{r}
-
+library('cowplot')
+library('data.table')
+library('ggplot2')
 ```
 
+
+```{r}
+dataDir = 'data'
+
+dBig = fread(file.path(dataDir, 'foia_150k_plus.csv'))
+
+filepaths = list.files(dataDir, 'foia_up_to', recursive = TRUE)
+dSmall = rbindlist(lapply(file.path(dataDir, filepaths), fread),
+                   use.names = TRUE, idcol = TRUE)
+```
+
+```{r}
+dBig[, DateApproved := as.IDate(DateApproved, '%m/%d/%Y')]
+dSmall[, DateApproved := as.IDate(DateApproved, '%m/%d/%Y')]
+
+dBig[, Weekday := format(DateApproved, '%u')]
+dSmall[, Weekday := format(DateApproved, '%u')]
+```
+
+```{r}
+dBig1 = dBig[, .N, by = .(State, Weekday)]
+dSmall1 = dSmall[, .N, by = .(State, Weekday)]
+```
+
+```{r}
+pSmall1 = ggplot(dSmall1) +
+  geom_violin(aes(x = Weekday, y = N), scale = 'width') +
+  labs(title = 'Up to 150k', y = 'Number of approvals per state') +
+  scale_y_log10()
+
+pBig1 = ggplot(dBig1) +
+  geom_violin(aes(x = Weekday, y = N), scale = 'width') +
+  labs(title = '> 150k', y = 'Number of approvals per state') +
+  scale_y_log10()
+
+p = plot_grid(pSmall1, pBig1, nrow = 1, align = 'hv', axis = 'tblr')
+p
+```
